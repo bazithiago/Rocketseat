@@ -1,37 +1,22 @@
-let botaoAdicionar = document.querySelector('button.add')
-let divApp = document.querySelector('#app')
+let nomes = ["Diego", "Gabriel", "Lucas"];
+let element = document.body
+let newUl = document.createElement('ul')
+let inputValue = document.querySelector('input[name=nome')
 
-let textoBotao = document.createTextNode('Clique para adicionar')
 
-function getRandomColor() {
-    var letters = "0123456789ABCDEF";
-    var color = "#";
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+function limpar() {
+    if (inputValue.value !== '') {
+        inputValue.value = ""
     }
-    return color;
 }
 
+function adicionar() {
+    let newLi = document.createElement('li');
+    let textLi = document.createTextNode(inputValue.value)
 
-botaoAdicionar.appendChild(textoBotao);
-botaoAdicionar.onclick = function () {
-    let quadrado = document.createElement('div');
-
-    quadrado.style.width = '100px';
-    quadrado.style.height = '100px';
-    quadrado.style.backgroundColor = '#F00';
-
-    quadrado.addEventListener("mouseover",() => {
-        let newColor = getRandomColor();
-
-        quadrado.style.background = newColor;
-
-    });
-
-    quadrado.classList.add('square')
+    newLi.appendChild(textLi);
+    newUl.appendChild(newLi);
+    element.appendChild(newUl);
     
-    divApp.appendChild(quadrado)
-};
-
-
-
+    limpar();
+}
