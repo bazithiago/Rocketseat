@@ -1,14 +1,16 @@
-let inputElement = document.querySelector('input[id=nome]')
-let btnElement = document.querySelector('button.botao')
-let boxElement = document.querySelector('#app')
+let botaoAdicionar = document.querySelector('button.add')
+let divApp = document.querySelector('#app')
 
-btnElement.onclick = function() {
-    let text = inputElement.value;
+let textoBotao = document.createTextNode('Clique para adicionar')
 
-    alert(text)
-}
+// let addQuadrado = 
 
-boxElement.style.width = 100;
-boxElement.style.height = '100px';
-boxElement.style.backgroundColor = '#f00';
+botaoAdicionar.appendChild(textoBotao);
+botaoAdicionar.onclick = function () {
+    let quadrado = document.createElement('div');
+    quadrado.style.width = '100px';
+    quadrado.style.height = '100px';
+    quadrado.style.backgroundColor = '#F00';
+    divApp.appendChild(quadrado)
+};
 
