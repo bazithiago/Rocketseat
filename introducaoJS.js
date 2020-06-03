@@ -1,28 +1,19 @@
-let lista = [];
+function temHabilidade(array) {
+     return array.indexOf('Javascript') > -1;
+   }
 
-function pares(n1, n2) {
-    while (n1 <= n2) {
-        if ((n1 % 2) == 0) {
-            lista.push(n1);
-        }
-        n1++
-    }
-}
+   var skills = ["Javascript", "ReactJS", "React Native"];
+   temHabilidade(skills); 
 
-pares(32, 100)
-console.log(lista)
+//    console.log(temHabilidade(skills));
 
 
-let lista2 = []
 
-function exibePares(n1, n2) {
+   function temHabilidade(oneSkill) {
 
-    for (let i = n1; i <= n2; i++) {
-        if (n1 % 2 == 0) {
-            lista2.push(i)
-        }
-    } return lista2
-}
+    var skills = ["Javascript", "ReactJS", "React Native"];
 
-exibePares(20,50)
-console.log(lista2)
+       return skills.indexOf(oneSkill) > -1;
+   }
+
+   console.log(temHabilidade("React"))
